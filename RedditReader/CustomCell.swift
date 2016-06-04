@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class CustomCell: UITableViewCell {
+    
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+}
