@@ -9,9 +9,10 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tableViewArray = NSMutableArray()
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +20,8 @@ class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource 
     // MARK: - LifeCylcle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.delegate = self
         
         Alamofire.request(.GET, "https://www.reddit.com/r/pictures.json", parameters: nil)
             .responseJSON { response in
@@ -31,7 +34,10 @@ class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource 
                     
                     let data = JSON["data"] as? NSDictionary
                     let children = data!["children"] as? NSMutableArray
+                    
                     self.tableViewArray = children!
+              
+                    
                     
                     self.tableView.reloadData()
                     
@@ -58,15 +64,27 @@ class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource 
         let dictionary = self.tableViewArray[indexPath.row]
         let data = dictionary["data"] as? NSDictionary
         
-        var scoreInt = data!["score"] as! Int
-        var scoreString = String(scoreInt)
+        let scoreInt = data!["score"] as! Int
+        let scoreString = String(scoreInt)
         
         cell.pointsLabel?.text = scoreString
         cell.titleLabel?.text = data!["title"] as? String
         cell.userLabel?.text = data!["author"] as? String
-
+        
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let dictionary = self.tableViewArray[indexPath.row]
+        let data = dictionary["data"] as? NSDictionary
+        let url = data!["url"] as! String
+        
+        print("URL: ", url)
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+        
+        
         
     }
     
