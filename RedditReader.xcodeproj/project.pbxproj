@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		349D95A57E2D30E9C2F6D31C /* Pods_RedditReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676D2C5196193A947745A494 /* Pods_RedditReader.framework */; };
 		996EC2A21D0383AE009F4A78 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996EC2A11D0383AE009F4A78 /* CustomCell.swift */; };
+		99F605321D03CFF100C99146 /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F605311D03CFF100C99146 /* customCell.xib */; };
 		99FE77BD1D03457600F3EBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE77BC1D03457600F3EBA2 /* AppDelegate.swift */; };
 		99FE77BF1D03457600F3EBA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE77BE1D03457600F3EBA2 /* ViewController.swift */; };
 		99FE77C21D03457600F3EBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FE77C01D03457600F3EBA2 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		485A5BB6337BE76A76584E79 /* Pods-RedditReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedditReader/Pods-RedditReader.debug.xcconfig"; sourceTree = "<group>"; };
 		676D2C5196193A947745A494 /* Pods_RedditReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		996EC2A11D0383AE009F4A78 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		99F605311D03CFF100C99146 /* customCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
 		99FE77B91D03457600F3EBA2 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FE77BC1D03457600F3EBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FE77BE1D03457600F3EBA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				99FE77BC1D03457600F3EBA2 /* AppDelegate.swift */,
 				99FE77C01D03457600F3EBA2 /* Main.storyboard */,
 				99FE77BE1D03457600F3EBA2 /* ViewController.swift */,
+				99F605311D03CFF100C99146 /* customCell.xib */,
 				996EC2A11D0383AE009F4A78 /* CustomCell.swift */,
 				99FE77C31D03457600F3EBA2 /* Assets.xcassets */,
 				99FE77C51D03457600F3EBA2 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				99FE77C71D03457600F3EBA2 /* LaunchScreen.storyboard in Resources */,
 				99FE77C41D03457600F3EBA2 /* Assets.xcassets in Resources */,
+				99F605321D03CFF100C99146 /* customCell.xib in Resources */,
 				99FE77C21D03457600F3EBA2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
