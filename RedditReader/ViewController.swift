@@ -9,22 +9,38 @@
 import UIKit
 import Alamofire
 import DGElasticPullToRefresh
+import WAActivityIndicatorView
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Variables
     var tableViewArray = NSMutableArray()
     var tableView: UITableView!
-    
+    var room = String()
+    var html = "https://www.reddit.com/r/"
     
     
     // MARK: - LifeCylcle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let pulseView = WAActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 50, width: 50, height: 50),
+                                                indicatorType: ActivityIndicatorType.DotTriangle,
+                                                tintColor: UIColor.blackColor(),
+                                                indicatorSize: 100)
+        
+        view.addSubview(pulseView)
+        
+        pulseView.startAnimating()
+
         Runalmofire { (success) in
-            
+            pulseView.stopAnimating()
+            pulseView.hidden = true
         }
         refreshAnimation()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.tableViewArray = []
     }
     
     override func loadView() {
@@ -80,7 +96,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Almo Fire Function
     
     func Runalmofire(completion: (success: String) -> Void) {
-        Alamofire.request(.GET, "https://www.reddit.com/r/pictures.json", parameters: nil)
+        
+        let roomHtml = html + room + ".json"
+        
+        Alamofire.request(.GET, roomHtml, parameters: nil)
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -122,6 +141,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     
+
     
 
     

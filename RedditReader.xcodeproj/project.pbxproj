@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		349D95A57E2D30E9C2F6D31C /* Pods_RedditReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676D2C5196193A947745A494 /* Pods_RedditReader.framework */; };
+		993C19341D0619BC00E089BA /* DotTriangleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C19271D0619BC00E089BA /* DotTriangleAnimation.swift */; };
+		993C19351D0619BC00E089BA /* GridDotsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C19281D0619BC00E089BA /* GridDotsAnimation.swift */; };
+		993C19361D0619BC00E089BA /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C19291D0619BC00E089BA /* PulseAnimation.swift */; };
+		993C19371D0619BC00E089BA /* ThreeDotsScaleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C192A1D0619BC00E089BA /* ThreeDotsScaleAnimation.swift */; };
+		993C19381D0619BC00E089BA /* WAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C192B1D0619BC00E089BA /* WAActivityIndicatorView.swift */; };
+		993C19391D0619BC00E089BA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 993C192C1D0619BC00E089BA /* Info.plist */; };
+		993C193A1D0619BC00E089BA /* WAActivityIndicatorView.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 993C192E1D0619BC00E089BA /* WAActivityIndicatorView.xcconfig */; };
+		993C193B1D0619BC00E089BA /* WAActivityIndicatorView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 993C192F1D0619BC00E089BA /* WAActivityIndicatorView-dummy.m */; };
+		993C193D1D062B1D00E089BA /* Search Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C193C1D062B1D00E089BA /* Search Room.swift */; };
 		996EC2A21D0383AE009F4A78 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996EC2A11D0383AE009F4A78 /* CustomCell.swift */; };
 		99F605321D03CFF100C99146 /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F605311D03CFF100C99146 /* customCell.xib */; };
 		99FE77BD1D03457600F3EBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE77BC1D03457600F3EBA2 /* AppDelegate.swift */; };
@@ -39,6 +48,18 @@
 /* Begin PBXFileReference section */
 		485A5BB6337BE76A76584E79 /* Pods-RedditReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedditReader/Pods-RedditReader.debug.xcconfig"; sourceTree = "<group>"; };
 		676D2C5196193A947745A494 /* Pods_RedditReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		993C19271D0619BC00E089BA /* DotTriangleAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotTriangleAnimation.swift; path = WAActivityIndicatorView/Animations/DotTriangleAnimation.swift; sourceTree = "<group>"; };
+		993C19281D0619BC00E089BA /* GridDotsAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridDotsAnimation.swift; path = WAActivityIndicatorView/Animations/GridDotsAnimation.swift; sourceTree = "<group>"; };
+		993C19291D0619BC00E089BA /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulseAnimation.swift; path = WAActivityIndicatorView/Animations/PulseAnimation.swift; sourceTree = "<group>"; };
+		993C192A1D0619BC00E089BA /* ThreeDotsScaleAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeDotsScaleAnimation.swift; path = WAActivityIndicatorView/Animations/ThreeDotsScaleAnimation.swift; sourceTree = "<group>"; };
+		993C192B1D0619BC00E089BA /* WAActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WAActivityIndicatorView.swift; path = WAActivityIndicatorView/WAActivityIndicatorView.swift; sourceTree = "<group>"; };
+		993C192C1D0619BC00E089BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		993C192D1D0619BC00E089BA /* WAActivityIndicatorView.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = WAActivityIndicatorView.modulemap; sourceTree = "<group>"; };
+		993C192E1D0619BC00E089BA /* WAActivityIndicatorView.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = WAActivityIndicatorView.xcconfig; sourceTree = "<group>"; };
+		993C192F1D0619BC00E089BA /* WAActivityIndicatorView-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WAActivityIndicatorView-dummy.m"; sourceTree = "<group>"; };
+		993C19301D0619BC00E089BA /* WAActivityIndicatorView-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WAActivityIndicatorView-prefix.pch"; sourceTree = "<group>"; };
+		993C19311D0619BC00E089BA /* WAActivityIndicatorView-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WAActivityIndicatorView-umbrella.h"; sourceTree = "<group>"; };
+		993C193C1D062B1D00E089BA /* Search Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Search Room.swift"; sourceTree = "<group>"; };
 		996EC2A11D0383AE009F4A78 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		99F605311D03CFF100C99146 /* customCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
 		99FE77B91D03457600F3EBA2 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +121,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		993C19321D0619BC00E089BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				993C192C1D0619BC00E089BA /* Info.plist */,
+				993C192D1D0619BC00E089BA /* WAActivityIndicatorView.modulemap */,
+				993C192E1D0619BC00E089BA /* WAActivityIndicatorView.xcconfig */,
+				993C192F1D0619BC00E089BA /* WAActivityIndicatorView-dummy.m */,
+				993C19301D0619BC00E089BA /* WAActivityIndicatorView-prefix.pch */,
+				993C19311D0619BC00E089BA /* WAActivityIndicatorView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WAActivityIndicatorView";
+			sourceTree = "<group>";
+		};
+		993C19331D0619BC00E089BA /* WAActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				993C19271D0619BC00E089BA /* DotTriangleAnimation.swift */,
+				993C19281D0619BC00E089BA /* GridDotsAnimation.swift */,
+				993C19291D0619BC00E089BA /* PulseAnimation.swift */,
+				993C192A1D0619BC00E089BA /* ThreeDotsScaleAnimation.swift */,
+				993C192B1D0619BC00E089BA /* WAActivityIndicatorView.swift */,
+				993C19321D0619BC00E089BA /* Support Files */,
+			);
+			name = WAActivityIndicatorView;
+			path = ../Pods/WAActivityIndicatorView;
+			sourceTree = "<group>";
+		};
 		99FE77B01D03457600F3EBA2 = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +174,10 @@
 		99FE77BB1D03457600F3EBA2 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				993C19331D0619BC00E089BA /* WAActivityIndicatorView */,
 				99FE77BC1D03457600F3EBA2 /* AppDelegate.swift */,
 				99FE77C01D03457600F3EBA2 /* Main.storyboard */,
+				993C193C1D062B1D00E089BA /* Search Room.swift */,
 				99FE77BE1D03457600F3EBA2 /* ViewController.swift */,
 				99F605311D03CFF100C99146 /* customCell.xib */,
 				996EC2A11D0383AE009F4A78 /* CustomCell.swift */,
@@ -262,9 +313,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993C193A1D0619BC00E089BA /* WAActivityIndicatorView.xcconfig in Resources */,
 				99FE77C71D03457600F3EBA2 /* LaunchScreen.storyboard in Resources */,
 				99FE77C41D03457600F3EBA2 /* Assets.xcassets in Resources */,
 				99F605321D03CFF100C99146 /* customCell.xib in Resources */,
+				993C19391D0619BC00E089BA /* Info.plist in Resources */,
 				99FE77C21D03457600F3EBA2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +391,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993C19351D0619BC00E089BA /* GridDotsAnimation.swift in Sources */,
 				99FE77BF1D03457600F3EBA2 /* ViewController.swift in Sources */,
 				996EC2A21D0383AE009F4A78 /* CustomCell.swift in Sources */,
+				993C19341D0619BC00E089BA /* DotTriangleAnimation.swift in Sources */,
+				993C19371D0619BC00E089BA /* ThreeDotsScaleAnimation.swift in Sources */,
+				993C19381D0619BC00E089BA /* WAActivityIndicatorView.swift in Sources */,
+				993C193B1D0619BC00E089BA /* WAActivityIndicatorView-dummy.m in Sources */,
+				993C193D1D062B1D00E089BA /* Search Room.swift in Sources */,
+				993C19361D0619BC00E089BA /* PulseAnimation.swift in Sources */,
 				99FE77BD1D03457600F3EBA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
