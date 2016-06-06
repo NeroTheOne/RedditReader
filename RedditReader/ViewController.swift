@@ -12,19 +12,35 @@ import DGElasticPullToRefresh
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - Variables
     var tableViewArray = NSMutableArray()
     var tableView: UITableView!
     
-//    @IBOutlet weak var tableView: UITableView!
     
     
     // MARK: - LifeCylcle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.tableView.delegate = self
+        Runalmofire { (success) in
+            
+        }
         refreshAnimation()
     }
+    
+    override func loadView() {
+        super.loadView()
+        
+        tableView = UITableView(frame: view.bounds, style: .Plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 90
+        tableView.registerNib(UINib(nibName: "customCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        tableView.separatorColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 231/255.0, alpha: 1.0)
+        tableView.backgroundColor = UIColor(red: 250/255.0, green: 250/255.0, blue: 251/255.0, alpha: 1.0)
+        view.addSubview(tableView)
+    }
+
     
     //MARK: - TableView Delegate
     
@@ -61,6 +77,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         UIApplication.sharedApplication().openURL(NSURL(string: url)!)
     }
     
+    // MARK: - Almo Fire Function
     
     func Runalmofire(completion: (success: String) -> Void) {
         Alamofire.request(.GET, "https://www.reddit.com/r/pictures.json", parameters: nil)
@@ -88,6 +105,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    // MARK: - Aimation Functions
+    
     func refreshAnimation() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -103,19 +122,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     
-    override func loadView() {
-        super.loadView()
-        
-        tableView = UITableView(frame: view.bounds, style: .Plain)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = 90
-        tableView.registerNib(UINib(nibName: "customCell", bundle: nil), forCellReuseIdentifier: "customCell")
-        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        tableView.separatorColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 231/255.0, alpha: 1.0)
-        tableView.backgroundColor = UIColor(red: 250/255.0, green: 250/255.0, blue: 251/255.0, alpha: 1.0)
-        view.addSubview(tableView)
-    }
     
 
     
