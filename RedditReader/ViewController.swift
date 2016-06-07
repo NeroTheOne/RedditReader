@@ -116,18 +116,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if let JSON = response.result.value {
                     
                     let data = JSON["data"] as? NSDictionary
-                    let children = data!["children"] as? NSMutableArray
-                    
+                    var children = data?["children"] as? NSMutableArray
+                    if children == nil {
+                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("searchRoom") as? searchRoom
+                        
+                        self.navigationController?.popToRootViewControllerAnimated(true)
+                        
+                    } else {
                     self.tableViewArray = children!
-                    
                     self.tableView.reloadData()
                     completion(success: "Complete")
                     
                     print("TABLE VIEW ARRAY: \(self.tableViewArray)")
                     
+                    }
+                   
                     //                  print("JSON: \(JSON)")
                     //                  print("THIS IS THE CHILDEN ARRAY: ", JSON["data"]!!["children"]  )
                 }
+                    
+                
         }
     }
     

@@ -24,7 +24,7 @@
         <!--Search Room-->
         <scene sceneID="sPE-0X-KyK">
             <objects>
-                <viewController title="Search Room" id="FTb-VB-gg1" customClass="searchRoom" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchRoom" title="Search Room" id="FTb-VB-gg1" customClass="searchRoom" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exZ-Lc-xIC"/>
                         <viewControllerLayoutGuide type="bottom" id="9zr-wA-8uW"/>

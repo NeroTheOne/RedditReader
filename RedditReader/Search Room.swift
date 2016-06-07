@@ -34,6 +34,12 @@ class searchRoom: UIViewController, UITextFieldDelegate {
         
     }
     
+    func alert() {
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func goButton(sender: AnyObject) {
         textField.delegate = self
         room = self.textField.text!
