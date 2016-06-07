@@ -140,7 +140,6 @@
 		993C19331D0619BC00E089BA /* WAActivityIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
-				99FE77C01D03457600F3EBA2 /* Main.storyboard */,
 				993C19271D0619BC00E089BA /* DotTriangleAnimation.swift */,
 				993C19281D0619BC00E089BA /* GridDotsAnimation.swift */,
 				993C19291D0619BC00E089BA /* PulseAnimation.swift */,
@@ -178,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				993C19331D0619BC00E089BA /* WAActivityIndicatorView */,
+				99FE77C01D03457600F3EBA2 /* Main.storyboard */,
 				99FE77BC1D03457600F3EBA2 /* AppDelegate.swift */,
 				99FE77BE1D03457600F3EBA2 /* ViewController.swift */,
 				993C193E1D06535600E089BA /* CustomAlert.swift */,
@@ -446,7 +446,6 @@
 				99FE77C11D03457600F3EBA2 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../../RedditReader;
 			sourceTree = "<group>";
 		};
 		99FE77C51D03457600F3EBA2 /* LaunchScreen.storyboard */ = {

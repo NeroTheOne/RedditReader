@@ -14,7 +14,7 @@ class CustomAlert {
     
     func alert(view: UIViewController) {
         let alert = UIAlertController(title: "Nothing Found", message: "Search again", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         view.navigationController?.popToRootViewControllerAnimated(true)
         view.presentViewController(alert, animated: true, completion: nil)
     }

@@ -12,10 +12,13 @@ import UIKit
 class searchRoom: UIViewController, UITextFieldDelegate {
 
 
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
+        searchButton.enabled = false
     }
     
     var room: String = ""
@@ -33,8 +36,14 @@ class searchRoom: UIViewController, UITextFieldDelegate {
         self.textField.text = ""
         
     }
-
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField.text?.characters.count > 0 {
+            self.searchButton.enabled = true
+        }
+        return true
+    }
     @IBAction func goButton(sender: AnyObject) {
         textField.delegate = self
         room = self.textField.text!
