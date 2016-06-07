@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var tableView: UITableView!
     var room = String()
     var html = "https://www.reddit.com/r/"
+    let customAlert = CustomAlert()
     
     
     // MARK: - LifeCylcle
@@ -118,9 +119,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     let data = JSON["data"] as? NSDictionary
                     var children = data?["children"] as? NSMutableArray
                     if children == nil {
-                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("searchRoom") as? searchRoom
+                        self.customAlert.alert(self)
                         
-                        self.navigationController?.popToRootViewControllerAnimated(true)
                         
                     } else {
                     self.tableViewArray = children!
