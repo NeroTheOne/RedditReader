@@ -31,12 +31,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         view.addSubview(pulseView)
         
         pulseView.startAnimating()
-
+        
         Runalmofire { (success) in
             pulseView.stopAnimating()
             pulseView.hidden = true
         }
         refreshAnimation()
+    }
+    
+    deinit {
+        tableView.dg_removePullToRefresh()
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -56,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.backgroundColor = UIColor(red: 250/255.0, green: 250/255.0, blue: 251/255.0, alpha: 1.0)
         view.addSubview(tableView)
     }
-
+    
     
     //MARK: - TableView Delegate
     
@@ -141,9 +145,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     
-
     
-
+    
+    
     
 }
 
