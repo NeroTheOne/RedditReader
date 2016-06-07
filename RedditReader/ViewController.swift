@@ -102,8 +102,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func Runalmofire(completion: (success: String) -> Void) {
         
         let roomHtml = html + room + ".json"
+        let trimmedString = roomHtml.removeWhitespace()
+        print("PRINT STRING: ", trimmedString)
         
-        Alamofire.request(.GET, roomHtml, parameters: nil)
+        
+        Alamofire.request(.GET, trimmedString, parameters: nil)
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -128,6 +131,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    
+    
     // MARK: - Aimation Functions
     
     func refreshAnimation() {
@@ -149,5 +154,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
+}
+
+extension String {
+    func replace(string:String, replacement:String) -> String {
+        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
+    
+    func removeWhitespace() -> String {
+        return self.replace(" ", replacement: "")
+    }
 }
 
