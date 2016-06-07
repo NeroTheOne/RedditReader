@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -24,36 +25,46 @@
         <!--Search Room-->
         <scene sceneID="sPE-0X-KyK">
             <objects>
-                <viewController storyboardIdentifier="searchRoom" title="Search Room" id="FTb-VB-gg1" customClass="searchRoom" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Room" id="FTb-VB-gg1" customClass="searchRoom" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exZ-Lc-xIC"/>
                         <viewControllerLayoutGuide type="bottom" id="9zr-wA-8uW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wlb-Yu-5ui">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Wlb-Yu-5ui">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEB-xq-xWN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEB-xq-xWN">
                                 <rect key="frame" x="194" y="285" width="213" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OKg-dL-yfj"/>
                                     <constraint firstAttribute="width" constant="213" id="pX2-PD-YUp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Room:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBJ-tN-wBs">
-                                <rect key="frame" x="235" y="239" width="131" height="26"/>
+                                <rect key="frame" x="235" y="235" width="131" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc2-Qf-GMi">
-                                <rect key="frame" x="281" y="323" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc2-Qf-GMi">
+                                <rect key="frame" x="194" y="323" width="213" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="GO9-E6-eiP"/>
+                                    <constraint firstAttribute="height" constant="30" id="nwh-8b-vQC"/>
+                                    <constraint firstAttribute="height" constant="30" id="xdH-Bc-SBd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Go"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nwh-8b-vQC"/>
+                                        <exclude reference="xdH-Bc-SBd"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="goButton:" destination="FTb-VB-gg1" eventType="touchUpInside" id="Wv7-xT-7JH"/>
                                 </connections>
@@ -61,17 +72,50 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZEB-xq-xWN" firstAttribute="leading" secondItem="Fc2-Qf-GMi" secondAttribute="trailing" constant="-125" id="7LK-Ht-Ojt"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="leading" secondItem="ZEB-xq-xWN" secondAttribute="leading" id="1qN-LX-EQ2"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="top" secondItem="ZEB-xq-xWN" secondAttribute="bottom" constant="8" symbolic="YES" id="DCT-Du-iJu"/>
                             <constraint firstItem="ZEB-xq-xWN" firstAttribute="top" secondItem="wBJ-tN-wBs" secondAttribute="bottom" constant="20" id="Ifb-dD-Twh"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="width" secondItem="ZEB-xq-xWN" secondAttribute="width" id="Oe3-SG-Zib"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="leading" secondItem="ZEB-xq-xWN" secondAttribute="leading" id="OxT-sU-IxL"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="height" secondItem="ZEB-xq-xWN" secondAttribute="height" id="Ud6-SW-hfy"/>
                             <constraint firstItem="ZEB-xq-xWN" firstAttribute="centerY" secondItem="Wlb-Yu-5ui" secondAttribute="centerY" id="W2O-hf-5Di"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="top" secondItem="ZEB-xq-xWN" secondAttribute="bottom" constant="8" id="XLj-ba-HhU"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="width" secondItem="ZEB-xq-xWN" secondAttribute="width" id="XtO-Pb-cZ2"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="leading" secondItem="Wlb-Yu-5ui" secondAttribute="leadingMargin" constant="174" id="b1L-Ld-UqI"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="trailing" secondItem="ZEB-xq-xWN" secondAttribute="trailing" id="bbd-kD-djy"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="leading" secondItem="Wlb-Yu-5ui" secondAttribute="leading" constant="194" id="eXh-m7-590"/>
+                            <constraint firstItem="9zr-wA-8uW" firstAttribute="top" secondItem="Fc2-Qf-GMi" secondAttribute="bottom" constant="250" id="g7q-7j-fOx"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="trailing" secondItem="ZEB-xq-xWN" secondAttribute="trailing" id="jJj-TI-59G"/>
                             <constraint firstItem="ZEB-xq-xWN" firstAttribute="centerX" secondItem="Wlb-Yu-5ui" secondAttribute="centerX" id="ke9-HI-lBe"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="centerX" secondItem="Wlb-Yu-5ui" secondAttribute="centerX" id="kvw-wp-Tt8"/>
                             <constraint firstItem="wBJ-tN-wBs" firstAttribute="centerX" secondItem="ZEB-xq-xWN" secondAttribute="centerX" id="mnQ-Lo-5NS"/>
-                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="top" secondItem="ZEB-xq-xWN" secondAttribute="bottom" constant="8" id="zf0-hU-I5E"/>
+                            <constraint firstItem="Fc2-Qf-GMi" firstAttribute="top" secondItem="ZEB-xq-xWN" secondAttribute="bottom" constant="8" symbolic="YES" id="n6y-S2-o7e"/>
+                            <constraint firstItem="9zr-wA-8uW" firstAttribute="top" secondItem="Fc2-Qf-GMi" secondAttribute="bottom" constant="247" id="nzD-RK-n2B"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Fc2-Qf-GMi" secondAttribute="bottom" constant="250" id="pFT-Cy-PKa"/>
+                            <constraint firstItem="ZEB-xq-xWN" firstAttribute="height" secondItem="wBJ-tN-wBs" secondAttribute="height" id="wru-cH-MSd"/>
+                            <constraint firstItem="9zr-wA-8uW" firstAttribute="top" secondItem="Fc2-Qf-GMi" secondAttribute="bottom" constant="247" id="y5L-qa-U9g"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1qN-LX-EQ2"/>
+                                <exclude reference="DCT-Du-iJu"/>
+                                <exclude reference="OxT-sU-IxL"/>
+                                <exclude reference="XtO-Pb-cZ2"/>
+                                <exclude reference="b1L-Ld-UqI"/>
+                                <exclude reference="bbd-kD-djy"/>
+                                <exclude reference="eXh-m7-590"/>
+                                <exclude reference="jJj-TI-59G"/>
+                                <exclude reference="n6y-S2-o7e"/>
+                                <exclude reference="pFT-Cy-PKa"/>
+                                <exclude reference="g7q-7j-fOx"/>
+                                <exclude reference="nzD-RK-n2B"/>
+                                <exclude reference="y5L-qa-U9g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="fKf-cU-KHV"/>
                     <connections>
-                        <outlet property="searchButton" destination="Fc2-Qf-GMi" id="eQ0-pH-wh6"/>
+                        <outlet property="searchButton" destination="Fc2-Qf-GMi" id="u40-e9-zOM"/>
                         <outlet property="textField" destination="ZEB-xq-xWN" id="SFN-lT-X2Q"/>
                     </connections>
                 </viewController>

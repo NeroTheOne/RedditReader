@@ -22,11 +22,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     // MARK: - LifeCylcle
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.topViewController?.title = room.uppercaseString
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)]
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
+        
+        
         let pulseView = WAActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 50, width: 50, height: 50),
                                                 indicatorType: ActivityIndicatorType.DotTriangle,
-                                                tintColor: UIColor.blackColor(),
+                                                tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0),
                                                 indicatorSize: 100)
         
         view.addSubview(pulseView)
@@ -38,6 +45,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             pulseView.hidden = true
         }
         refreshAnimation()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
     }
     
     deinit {
@@ -54,12 +65,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView = UITableView(frame: view.bounds, style: .Plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 90
+        tableView.rowHeight = 80
         tableView.registerNib(UINib(nibName: "customCell", bundle: nil), forCellReuseIdentifier: "customCell")
         tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.separatorColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 231/255.0, alpha: 1.0)
         tableView.backgroundColor = UIColor(red: 250/255.0, green: 250/255.0, blue: 251/255.0, alpha: 1.0)
         view.addSubview(tableView)
+        
+        
     }
     
     
@@ -80,9 +93,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let scoreInt = data!["score"] as! Int
         let scoreString = String(scoreInt)
         
+
+        
         cell.pointsLabel?.text = scoreString
         cell.titleLabel.text = data!["title"] as? String
         cell.userLabel.text = data!["author"] as? String
+        
         
         
         return cell
@@ -103,7 +119,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func Runalmofire(completion: (success: String) -> Void) {
         
         let roomHtml = html + room + ".json"
-        let trimmedString = roomHtml.removeWhitespace()
+        var trimmedString = roomHtml.removeWhitespace()
+        
+        
         print("PRINT STRING: ", trimmedString)
         
         
